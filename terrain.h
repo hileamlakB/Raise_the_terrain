@@ -45,7 +45,7 @@ void clean_close(void);
 /*Graphic funcs*/
 void transform_data(int [MAP_WIDTH][MAP_WIDTH], SDL_Point (*)[MAP_WIDTH][MAP_WIDTH], float);
 void draw_grid(SDL_Point (*)[MAP_WIDTH][MAP_WIDTH]);
-void rotate_grid(SDL_Point (*)[MAP_WIDTH][MAP_WIDTH], float);
+void rotate_grid(int [MAP_WIDTH][MAP_WIDTH], SDL_Point (*)[MAP_WIDTH][MAP_WIDTH], float);
 
 /*memory utils*/
 void *srealloc(void *, unsigned int);

@@ -42,15 +42,13 @@ FILE *sopen(char *name)
  * array
  * @fd: file descriptor
  * @data: the int array to hold the data
- * @size: the dimention of the array  (data)
  * Return: an array of arrays containing a terian information
  */
 void load(FILE *fd, int (*data)[MAP_WIDTH][MAP_WIDTH])
 {
-	char *line = NULL;
+	char *line = NULL, *data_str;
 	size_t buffer_size = 0;
 	unsigned int col = 0, line_number = 1;
-	char *data_str;
 
 	while (1)
 	{
@@ -71,7 +69,10 @@ void load(FILE *fd, int (*data)[MAP_WIDTH][MAP_WIDTH])
 				(*data)[line_number - 1][col] = atoi(data_str);
 			else
 			{
-				dprintf(2, "L%i C%i: Data format should be integer->%s\n", line_number, col, data_str);
+				dprintf(2, "L%i C%i: Data format should be integer->%s\n",
+						line_number,
+						col,
+						data_str);
 				exit(EXIT_FAILURE);
 			}
 			col++;
@@ -85,6 +86,5 @@ void load(FILE *fd, int (*data)[MAP_WIDTH][MAP_WIDTH])
 		exit(EXIT_FAILURE);
 
 	}
-
 }
 

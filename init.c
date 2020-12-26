@@ -3,7 +3,6 @@
 
 /**
 * init - initalizes a window and a renderer for an SDL program
-* @instance: a struct containng SDL_Window and SDL_Renderer pointers
 * Exits if error happens returns nothing on success
 */
 void init(void)
@@ -17,14 +16,22 @@ void init(void)
 	}
 
 	/*Create window */
-	global_vars.instance.window = SDL_CreateWindow("Visualize terrain", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, global_vars.SCREEN_WIDTH, global_vars.SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+	global_vars.instance.window = SDL_CreateWindow("Visualize terrain",
+			SDL_WINDOWPOS_UNDEFINED,
+			SDL_WINDOWPOS_UNDEFINED,
+			global_vars.SCREEN_WIDTH,
+			global_vars.SCREEN_HEIGHT,
+			SDL_WINDOW_SHOWN);
 	if (!global_vars.instance.window)
 	{
 		dprintf(2, "Window could not be created! SDL_Error: %s\n", SDL_GetError());
 		exit(EXIT_FAILURE);
 	}
 	/*Create a renderer*/
-	global_vars.instance.renderer = SDL_CreateRenderer(global_vars.instance.window, -1, SDL_RENDERER_ACCELERATED|SDL_RENDERER_PRESENTVSYNC);
+	global_vars.instance.renderer = SDL_CreateRenderer(
+			global_vars.instance.window,
+			-1,
+			SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	if (!global_vars.instance.renderer)
 	{
 		dprintf(2, "Renderer could not be created! SDL_Error: %s\n", SDL_GetError());
@@ -32,9 +39,9 @@ void init(void)
 	}
 }
 /**
-*clean_close - cleans up during exit of the program
-*
-*/
+ *clean_close - cleans up during exit of the program
+ *
+ */
 void clean_close(void)
 {
 	if (global_vars.fd)
