@@ -32,12 +32,19 @@ And these is what the graph looks like,
 
 ## Files 
 [graphic_utils.c](./graphic_utils.c) -  all the utilites related to graphic rendering in SDL, like draw grid and transform grid which draws grid and transforms grid respectively.
+
 [init.c](./init.c) - This is where the functions related to opening and closing SDL windows defined
+
 [loader.c](./loader.c) - This is where the functions for loading and parsing the data form file are defined
+
 [README.md](./README.md) - This is the readme fiel you currenlty are reading 
+
 [terrain.c](./terrain.c) - This is the main entry point of the program
+
 [terrain.h](./terrain.h) - This is where all the prototypes are defined
+
 [tests/](./tests) - this is where all the files related to testing located including the images in these readme
+
 [utils.c](./utils.c) -  This are utilites besides the one that are realted to SDL
 
 ## Usage
